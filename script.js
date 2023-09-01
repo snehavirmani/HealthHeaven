@@ -44,17 +44,14 @@ document.querySelector(".discussion").addEventListener("click",function(){
 // })
 
 
-// var myIndex = 0;
-// carousel();
-
-// function carousel() {
-//   var i;
-//   var x = document.getElementsByClassName("mySlides");
-//   for (i = 0; i < x.length; i++) {
-//     x[i].style.display = "none";  
-//   }
-//   myIndex++;
-//   if (myIndex > x.length) {myIndex = 1}    
-//   x[myIndex-1].style.display = "block";  
-//   setTimeout(carousel, 2000); // Change image every 2 seconds
-// }
+window.onscroll = function(){
+    if(document.body.scrollTop>100 || document.documentElement.scrollTop >100){
+        document.querySelector("#scroll").style.display="block";
+    }else{
+        document.querySelector("#scroll").style.display="none";
+    }
+}
+document.querySelector("#scroll").addEventListener("click", function(){
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+} )
